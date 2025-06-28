@@ -1,7 +1,7 @@
 """ Module docstring: module is to demonstrate data types in python """
 # Text Type:	str
 # Numeric Types:	int, float, complex
-# Sequence Types:	list [] -- Immutable, tuple () -- mutable, range
+# Sequence Types:	list [] -- mutable, tuple () -- immutable, range
 # Mapping Type:	dict {Key: Value}
 # Set Types:	set {,}, frozenset
 import random  # random module to generate random numbers

@@ -12,8 +12,9 @@ mylist[1] = "orange"  # Change the value
 mytuple = tuple(mylist)  # Convert list back to tuple
 print(mytuple)  # Output: ('apple', 'orange', 'cherry', 'apple', 'kiwi', 'banana')
 # unpacking a tuple
-colours = ("red", "green", "blue")
-(r, g, b) = colours
+colours = ("red", "green", "blue", "red")
+print(colours)  # Output: ('red', 'green', 'blue', 'red')
+(r, g, b, r1) = colours
 print(r)  # Output: red
 # If the number of variables is less than the number of values,
 # you can add an * to the variable name and the values will be assigned to the variable as a list
