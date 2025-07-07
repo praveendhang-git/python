@@ -109,3 +109,16 @@ print(product_lambda)  # Output: 120
 squared_odd_product = reduce(
     lambda x, y: x * y, filter(lambda x: x % 2 == 1, map(lambda x: x * x, numbers)))
 print(squared_odd_product)  # Output: 225 (1 * 9 * 25)
+
+# The power of lambda is better shown when you use them as an anonymous function inside another function.
+
+
+def apply_function(n):
+    return lambda x: x * n
+
+
+# This function returns a lambda function that multiplies its input by n.
+doubler = apply_function(2)
+tripler = apply_function(3)
+print(doubler(5))  # Output: 10
+print(tripler(5))  # Output: 15
