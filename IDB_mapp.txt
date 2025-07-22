@@ -1,0 +1,155 @@
+
+What should be the customer_type value in RBM for R2 enterprise customer?
+
+
+for Enterprise customer, what should be value for CUSTOMER.BILLING_DRIVER_BOO?
+
+update HIERARCHY_LEVEL_NUM=3 where 
+
+Functional team confirmation
+concatenate_bills_boo --- Defines whether bills will be concatenated with the summary statement
+BILLING_DRIVER_BOO  -- This specifies whether the customer is the billing driver.If customer is not driven by customer billing hierarchy 
+						& it is account driven billing then set as 'F'.
+DESCENDANT_CUSTOMER_COUNT  value to be updated as -1
+CHILD_CUSTOMER_COUNT value to be updated as -1
+ACCOUNT_COUNT value to be updated as -1
+CUSTOMER.COMPANY_NAME_SDX how value are generated for this column?
+Need confirmation on these fields
+TAX_EXEMPT_REF
+PROVIDER_ID
+PASSWORD
+BILL_PERIOD
+BILL_PERIOD_UNITS
+NEXT_BILL_DTM
+BILLS_PER_STATEMENT
+VAT_REGISTRATION
+SUMMARY_CONTACT_SEQ
+SUMMARY_CURRENCY_CODE
+SUMMARY_STYLE_ID
+SUMMARY_BILL_HANDLING_CODE
+INVOICING_CO_ID    --- to be set as 2 , Need to check dictionary for it. In R1 Populated as null.
+
+Below all fields are null
+MARKET_SEGMENT_ID
+FAST_CACHE_BOO
+IRBS_VERSION
+INHOST_VERSION
+CUSTOMER_CATEGORY
+MACHINE_NAME
+TRANSITION_DTM
+INHOST_VERSION_SYNC
+INHOST_VERSION_SYNC_DTM
+LOGICALLY_DELETED_BOO
+TRANSFER_INDICATOR
+BILL_DAY_OF_THE_MONTH
+NEGATIVE_POINTS_THRESHOLD
+CUST_CREATED_UNDER_OFFER_BOO
+ORIGINAL_CUSTOMER_REF
+CLIENT_ENTITY_TAG
+
+
+
+
+IDB design update 
+PARENT_CUSTOMER_REF -- For top customer it will be null , below that assign the parent customer_ref to child
+ROOT_CUSTOMER_REF is always the top customer of the hierarchy. Is same as Top root customer for all customer in hierarchy.
+HIERARCHY_LEVEL_NUM counting from the top where the root customer has a hierarchy_level_num of one.
+COMPANY_NAME -- RBM -Y
+
+
+
+
+
+Target customer design
+CUSTOMER_CONTACT_SEQ -- Null for the BCA and ECA it should be set as seq no.
+COMPANY_NAME -- set for the BCA for rest it should null.
+COMPANY_NAME_SDX -- set for the BCA for rest it should null.
+
+
+
+PR Type = BA Type - BA OT
+MCPR = Main 
+CPR = Secondary
+IPR = Individual
+
+ACCOUNT.BILLING_DRIVER
+CU
+
+
+CUSTOMER_REF
+CUSTOMER_ACCOUNT_NUMBER
+CUSTOMER_CATEGORY
+COMPANY_ADDRESS_SEQ
+PARENT_CUSTOMER_REF
+ROOT_CUSTOMER_REF
+HIERARCHY_LEVEL_NUM
+START_DAT
+END_DAT
+ACCOUNT_COUNT
+RANDOM_HASH
+DOMAIN_ID
+CONCATENATE_BILLS
+COMPANY_NAME
+COMPANY_NAME_SDX
+
+
+When BILLING_DRIVER_BOO is set as "T" then below fields are mandetory for the Parent customer
+BILL_PERIOD	
+BILL_PERIOD_UNITS	
+NEXT_BILL_DTM	
+BILLS_PER_STATEMENT
+
+Similarly NEXT_BILL_DTM is mandetory for the child customer. Also it is observed that ACCOUNT.BILLING_DRIVER is set as 'CU'
+
+
+------------------------------Customerattribute-----------------
+
+CUST_TAX_REGISTRATION_NUM
+TOMS_CUSTOMER_ID
+LEGAL_STATUS
+NATIONALITY
+DOB
+MARKETING_SEGMENT
+PROV_CREDIT_LIMIT_MNY
+
+
+
+------------------------------Companydetails------------------
+
+CUSTOMER_REF
+START_DAT
+END_DAT
+COMPANY_ADDRESS_SEQ
+
+
+-----------------------Contact--------------
+
+PARENT_ID = CONTACT.CUSTOMER_REF
+CONTACT_SEQ   
+CONTACT_TYPE_ID
+TITLE
+FIRST_NAME
+LAST_NAME
+ADDRESS_NAME
+
+EMAIL_ADDRESS
+START_DAT = CONTACTDETAILS.CREATED_WHEN
+PERSONAL_PHONE = 
+
+--------------------------------------ADDRESS---------------------------------
+
+COUNTRY_ID
+ADDRESS_FORMAT_ID
+ADDRESS_5
+ADDRESS_4
+ADDRESS_3
+ADDRESS_2
+ADDRESS_1
+
+
+This is a new line added to the file.
+This is a new line added to the file.
+This is a new line added to the file.
+This is a new line added to the file.
+This is a new line added to the file.
+This is a new line added to the file.
