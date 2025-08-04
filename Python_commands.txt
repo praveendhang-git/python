@@ -1,0 +1,11 @@
+To list all installed python package
+python -m pip list
+
+To install python package
+python.exe -m pip install numpy
+
+to check the version of the package
+python -m pip show numpy 
+
+To upgrade the module
+python.exe -m pip install --upgrade pip

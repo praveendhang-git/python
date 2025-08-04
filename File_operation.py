@@ -14,3 +14,5 @@ else:
 # Creating a new file and writing to it
 with open('new_test_file.txt', 'w') as file:
     file.write('This is a new file created and written to.')
+# function to get the current working directory
+print(os.getcwd())
